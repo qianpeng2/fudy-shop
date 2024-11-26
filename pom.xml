@@ -24,7 +24,9 @@
 	<name>fudy-shop</name>
 	<description>fudy shop</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
+		<!--针对Java21以及以上的版本，lombok需要升级版本为30以上才可正常编译-->
+		<lombok.version>1.18.36</lombok.version>
 	</properties>
 
 	<dependencyManagement>
@@ -89,7 +91,7 @@
 			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
-				<version>1.18.24</version>
+				<version>${lombok.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -137,8 +139,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<source>17</source>
-					<target>17</target>
+					<source>21</source>
+					<target>21</target>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.mapstruct</groupId>
@@ -148,7 +150,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>1.18.22</version>
+							<version>${lombok.version}</version>
 						</path>
 						<path>
 							<groupId>org.projectlombok</groupId>
